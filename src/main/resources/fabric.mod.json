@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "telegrambot",
+  "version": "${version}",
+
+  "name": "Minecraft Server Telegram Bot",
+  "description": "A mod to connect your MineCraft server to a telegram bot and do lots of things in your Telegram group!",
+  "authors": [
+    "Parsa Shahmaleki"
+  ],
+  "contact": {
+    "homepage": "https://github.com/Dirty-Craft/telegrambot/",
+    "sources": "https://github.com/Dirty-Craft/telegrambot/"
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/telegrambot/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.dirtycraft.telegrambot.TelegramBot"
+    ]
+  },
+  "mixins": [
+    "telegrambot.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.10",
+    "fabric-api": "*",
+    "minecraft": "~1.19",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
