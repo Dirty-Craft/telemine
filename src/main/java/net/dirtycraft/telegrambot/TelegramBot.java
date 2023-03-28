@@ -4,11 +4,15 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
+import net.minecraft.text.Text;
 import net.minecraft.util.registry.Registry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import net.dirtycraft.telegrambot.config.ModConfigs;
+import net.dirtycraft.telegrambot.commands.TgCommand;
 import java.net.Proxy;
+import static net.minecraft.server.command.CommandManager.*;
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 
 public class TelegramBot implements ModInitializer {
 	public static final String MOD_ID = "telegrambot";
@@ -55,6 +59,10 @@ public class TelegramBot implements ModInitializer {
 
 		if (API.isValid() && ModConfigs.FEATURE_STARTING_SERVER_MESSAGE) {
 			API.sendMessage(ModConfigs.LANG_STARTING_SERVER_MESSAGE);
+		}
+
+		if (API.isValid() && ModConfigs.FEATURE_TG_SEND_MESSAGE_COMMAND) {
+			CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> TgCommand.register(dispatcher, API, ModConfigs.LANG_TG_COMMAND_SEND_MESSAGE_FORMAT));
 		}
 	}
 }

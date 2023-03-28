@@ -10,7 +10,7 @@ import java.io.InputStreamReader;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-class TelegramAPI {
+public class TelegramAPI {
     public boolean enabled = false;
     public String botToken = null;
     public String groupID = null;
@@ -49,6 +49,7 @@ class TelegramAPI {
 
     public String sendMessage(String text)
     {
+        TelegramBot.LOGGER.info("Sending a message to the Telegram group: " + text);
         return post("sendMessage", "chat_id=" + groupID + "&text=" + text);
     }
 

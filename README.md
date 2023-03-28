@@ -57,6 +57,7 @@ lang.online_players_list_message=Online players in the server: {list}
 lang.player_join_message={name} joined the server
 lang.player_left_message={name} left the server
 lang.player_death_message={death_message}
+lang.tg_command_send_message_format={player_name}: {message}
 lang.advancement_made_message={advancement_message}
 ```
 
