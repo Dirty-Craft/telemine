@@ -37,12 +37,22 @@ class TelegramAPI {
         return "https://api.telegram.org/bot" + botToken + "/";
     }
 
-    public String call(String uri)
+    public String get(String uri)
     {
-        return call(uri, "GET");
+        return call(uri, "GET", "");
     }
 
-    public String call(String uri, String method)
+    public String post(String uri, String payloadJson)
+    {
+        return call(uri, "POST", payloadJson);
+    }
+
+    public String sendMessage(String text)
+    {
+        return post("sendMessage", "chat_id=" + groupID + "&text=" + text);
+    }
+
+    public String call(String uri, String method, String payload)
     {
         if (!isValid()) return "ERROR";
 
@@ -80,6 +90,10 @@ class TelegramAPI {
 
             DataOutputStream wr = new DataOutputStream(
                     connection.getOutputStream());
+            if (method.equals("POST")) {
+                byte[] input = payload.getBytes("utf-8");
+                wr.write(input, 0, input.length);
+            }
             wr.close();
 
             InputStream is = connection.getInputStream();

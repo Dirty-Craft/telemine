@@ -40,7 +40,7 @@ public class TelegramBot implements ModInitializer {
 		} else {
 			String output = "ERROR";
 			try {
-				output = API.call("getme");
+				output = API.get("getme");
 			} catch (Exception e) {
 				output = "ERROR";
 			}
@@ -51,6 +51,10 @@ public class TelegramBot implements ModInitializer {
 			} else {
 				LOGGER.info("Connected to the bot successfully: " + output);
 			}
+		}
+
+		if (API.isValid()) {
+			API.sendMessage("Starting the server...");
 		}
 	}
 }
