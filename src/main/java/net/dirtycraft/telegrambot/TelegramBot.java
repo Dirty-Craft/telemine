@@ -53,7 +53,7 @@ public class TelegramBot implements ModInitializer {
 			}
 		}
 
-		if (API.isValid()) {
+		if (API.isValid() && ModConfigs.FEATURE_STARTING_SERVER_MESSAGE) {
 			API.sendMessage("Starting the server...");
 		}
 	}

@@ -16,6 +16,7 @@ public class ModConfigs {
 
     public static boolean FEATURE_STARTING_SERVER_MESSAGE;
     public static boolean FEATURE_SERVER_STARTED_AND_READY_MESSAGE;
+    public static boolean FEATURE_SERVER_SHUTDOWN_MESSAGE;
     public static boolean FEATURE_PLAYER_JOIN_MESSAGES;
     public static boolean FEATURE_PLAYER_JOIN_MESSAGE_SHOW_ONLINE_PLAYERS_LIST;
     public static boolean FEATURE_PLAYER_LEAVE_MESSAGES;
@@ -43,6 +44,7 @@ public class ModConfigs {
 
         configs.addKeyValuePair(new Pair<>("feature.starting_server_message", true), "boolean");
         configs.addKeyValuePair(new Pair<>("feature.server_started_and_ready_message", true), "boolean");
+        configs.addKeyValuePair(new Pair<>("feature.server_shutdown_message", true), "boolean");
         configs.addKeyValuePair(new Pair<>("feature.player_join_messages", true), "boolean");
         configs.addKeyValuePair(new Pair<>("feature.player_join_message_show_online_players_list", true), "boolean");
         configs.addKeyValuePair(new Pair<>("feature.player_leave_messages", true), "boolean");
@@ -62,6 +64,7 @@ public class ModConfigs {
 
         FEATURE_STARTING_SERVER_MESSAGE = CONFIG.getOrDefault("feature.starting_server_message", true);
         FEATURE_SERVER_STARTED_AND_READY_MESSAGE = CONFIG.getOrDefault("feature.server_started_and_ready_message", true);
+        FEATURE_SERVER_SHUTDOWN_MESSAGE = CONFIG.getOrDefault("feature.server_shutdown_message", true);
         FEATURE_PLAYER_JOIN_MESSAGES = CONFIG.getOrDefault("feature.player_join_messages", true);
         FEATURE_PLAYER_JOIN_MESSAGE_SHOW_ONLINE_PLAYERS_LIST = CONFIG.getOrDefault("feature.player_join_message_show_online_players_list", true);
         FEATURE_PLAYER_LEAVE_MESSAGES = CONFIG.getOrDefault("feature.player_leave_messages", true);

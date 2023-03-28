@@ -5,8 +5,9 @@ This mod helps you to have lots interactions between server and your group.
 
 These are some features:
 
-- [ ] Sends a message when starting the server
+- [x] Sends a message when starting the server
 - [ ] Sends a message when server is fully started and ready
+- [ ] Sends a message when shutting down the server
 - [ ] Sends list of the online players in the group
 - [ ] Sends the death messages
 - [ ] Sends the advancement messages
