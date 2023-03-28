@@ -59,3 +59,13 @@ lang.player_left_message={name} left the server
 lang.player_death_message={death_message}
 lang.advancement_made_message={advancement_message}
 ```
+
+## Authors
+This project is created by [parsampsh](https://github.com/parsampsh)
+and is a part of [Dirty Craft project](https://github.com/Dirty-Craft)
+and is licensed under [MIT License](LICENSE).
+
+## Contribution
+If you want to contribute to this project,
+you can checkout the [TODO list](TODO.md) and
+[Issues](https://github.com/Dirty-Craft/telegrambot).
