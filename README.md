@@ -12,4 +12,4 @@ These are some features:
 - [ ] Sends the death messages
 - [ ] Sends the advancement messages
 - [ ] Adds `/tg` command that allows players to send a message in the group from the server chat
-- [ ] Every feature is configurable and can be enabled/disabled
+- [x] Every feature is configurable and can be enabled/disabled
