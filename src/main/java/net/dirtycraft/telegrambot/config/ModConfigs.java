@@ -8,7 +8,9 @@ public class ModConfigs {
     private static ModConfigProvider configs;
 
     public static String BOT_TOKEN;
-    public static String PROXY;
+    public static String PROXY_TYPE;
+    public static String PROXY_HOST;
+    public static String PROXY_PORT;
     public static String GROUP_ID;
     public static boolean ENABLED;
 
@@ -22,9 +24,11 @@ public class ModConfigs {
     }
 
     private static void createConfigs() {
-        configs.addKeyValuePair(new Pair<>("telegram_bot_token", "<put the bot token here>"), "String");
-        configs.addKeyValuePair(new Pair<>("telegram_group_id", "<put the group id here>"), "String");
-        configs.addKeyValuePair(new Pair<>("proxy", "<use proxy to call Telegram APIs if needed>"), "String");
+        configs.addKeyValuePair(new Pair<>("telegram_bot_token", ""), "String");
+        configs.addKeyValuePair(new Pair<>("telegram_group_id", ""), "String");
+        configs.addKeyValuePair(new Pair<>("proxy_type", ""), "String");
+        configs.addKeyValuePair(new Pair<>("proxy_host", ""), "String");
+        configs.addKeyValuePair(new Pair<>("proxy_port", ""), "String");
         configs.addKeyValuePair(new Pair<>("enabled", false), "boolean");
     }
 
@@ -32,7 +36,9 @@ public class ModConfigs {
         BOT_TOKEN = CONFIG.getOrDefault("telegram_bot_token", "");
         GROUP_ID = CONFIG.getOrDefault("telegram_group_id", "");
         ENABLED = CONFIG.getOrDefault("enabled", false);
-        PROXY = CONFIG.getOrDefault("proxy", "");
+        PROXY_TYPE = CONFIG.getOrDefault("proxy_type", "");
+        PROXY_HOST = CONFIG.getOrDefault("proxy_host", "");
+        PROXY_PORT = CONFIG.getOrDefault("proxy_port", "");
 
         TelegramBot.LOGGER.info("All " + configs.getConfigsList().size() + " config options have been set properly");
     }

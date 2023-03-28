@@ -8,6 +8,7 @@ import net.minecraft.util.registry.Registry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import net.dirtycraft.telegrambot.config.ModConfigs;
+import java.net.Proxy;
 
 public class TelegramBot implements ModInitializer {
 	public static final String MOD_ID = "telegrambot";
@@ -16,8 +17,8 @@ public class TelegramBot implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		LOGGER.info("Loading configuration");
 		ModConfigs.registerConfigs();
-		LOGGER.info("Hello Telegram Bot!");
 
 		if (!ModConfigs.ENABLED) {
 			//LOGGER.warn("The mod is disabled");
@@ -29,7 +30,9 @@ public class TelegramBot implements ModInitializer {
 			API.enabled = true;
 			API.botToken = ModConfigs.BOT_TOKEN;
 			API.groupID = ModConfigs.GROUP_ID;
-			API.proxy = ModConfigs.PROXY;
+			API.proxyType = ModConfigs.PROXY_TYPE;
+			API.proxyHost = ModConfigs.PROXY_HOST;
+			API.proxyPort = ModConfigs.PROXY_PORT;
 		}
 
 		if (!API.isValid()) {
@@ -42,7 +45,7 @@ public class TelegramBot implements ModInitializer {
 				output = "ERROR";
 			}
 
-			if (output == "ERROR") {
+			if (output.equals("ERROR")) {
 				API.enabled = false;
 				LOGGER.error("Failed to connect to the bot");
 			} else {

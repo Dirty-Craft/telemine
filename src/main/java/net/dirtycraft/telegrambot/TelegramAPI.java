@@ -14,7 +14,9 @@ class TelegramAPI {
     public boolean enabled = false;
     public String botToken = null;
     public String groupID = null;
-    public String proxy = null;
+    public String proxyType = null;
+    public String proxyHost = null;
+    public String proxyPort = null;
 
     public boolean stringIsEmpty(String value)
     {
@@ -46,10 +48,30 @@ class TelegramAPI {
 
         HttpURLConnection connection = null;
         try {
+            boolean proxyEnabled = false;
+            Proxy proxy = null;
+            int intProxyPort = 0;
+
+            if (stringIsEmpty(proxyPort)) {
+                intProxyPort = 0;
+            } else {
+                intProxyPort = Integer.parseInt(proxyPort);
+            }
+
+            if (proxyType.equals("http")) {
+                proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, intProxyPort));
+            } else if (proxyType.equals("socks")) {
+                proxy = new Proxy(Proxy.Type.SOCKS, new InetSocketAddress(proxyHost, intProxyPort));
+            }
+
             URL url = new URL(getBaseURL() + uri);
-            connection = (HttpURLConnection) url.openConnection(
-                    new Proxy(Proxy.Type.HTTP, new InetSocketAddress("localhost", 8889))
-            );
+
+            if (proxy == null) {
+                connection = (HttpURLConnection) url.openConnection();
+            } else {
+                connection = (HttpURLConnection) url.openConnection(proxy);
+            }
+
             connection.setRequestMethod(method);
             connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
             connection.setUseCaches(false);
