@@ -13,6 +13,6 @@ public class TelegramBot implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		//
+		LOGGER.info("Hello Telegram Bot!");
 	}
 }
