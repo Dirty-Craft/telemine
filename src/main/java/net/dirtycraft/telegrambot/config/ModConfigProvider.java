@@ -16,7 +16,12 @@ public class ModConfigProvider implements SimpleConfig.DefaultConfig {
     public void addKeyValuePair(Pair<String, ?> keyValuePair, String comment) {
         configsList.add(keyValuePair);
         configContents += keyValuePair.getFirst() + "=" + keyValuePair.getSecond() + "\n";
-        if (keyValuePair.getFirst().equals("enabled") || keyValuePair.getFirst().equals("feature.tg_send_message_command")) {
+        if (
+                keyValuePair.getFirst().equals("enabled") ||
+                keyValuePair.getFirst().equals("telegram.group_id") ||
+                keyValuePair.getFirst().equals("feature.tg_send_message_command") ||
+                keyValuePair.getFirst().equals("proxy.port")
+        ) {
             configContents += "\n";
         }
     }

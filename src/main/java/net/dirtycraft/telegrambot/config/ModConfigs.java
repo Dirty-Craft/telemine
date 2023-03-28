@@ -7,12 +7,12 @@ public class ModConfigs {
     public static SimpleConfig CONFIG;
     private static ModConfigProvider configs;
 
+    public static boolean ENABLED;
     public static String BOT_TOKEN;
+    public static String GROUP_ID;
     public static String PROXY_TYPE;
     public static String PROXY_HOST;
     public static String PROXY_PORT;
-    public static String GROUP_ID;
-    public static boolean ENABLED;
 
     public static boolean FEATURE_STARTING_SERVER_MESSAGE;
     public static boolean FEATURE_SERVER_STARTED_AND_READY_MESSAGE;
@@ -44,12 +44,14 @@ public class ModConfigs {
     }
 
     private static void createConfigs() {
-        configs.addKeyValuePair(new Pair<>("telegram_bot_token", ""), "String");
-        configs.addKeyValuePair(new Pair<>("telegram_group_id", ""), "String");
-        configs.addKeyValuePair(new Pair<>("proxy_type", ""), "String");
-        configs.addKeyValuePair(new Pair<>("proxy_host", ""), "String");
-        configs.addKeyValuePair(new Pair<>("proxy_port", ""), "String");
         configs.addKeyValuePair(new Pair<>("enabled", false), "boolean");
+
+        configs.addKeyValuePair(new Pair<>("telegram.bot_token", ""), "String");
+        configs.addKeyValuePair(new Pair<>("telegram.group_id", ""), "String");
+
+        configs.addKeyValuePair(new Pair<>("proxy.type", ""), "String");
+        configs.addKeyValuePair(new Pair<>("proxy.host", ""), "String");
+        configs.addKeyValuePair(new Pair<>("proxy.port", ""), "String");
 
         configs.addKeyValuePair(new Pair<>("feature.starting_server_message", true), "boolean");
         configs.addKeyValuePair(new Pair<>("feature.server_started_and_ready_message", true), "boolean");
@@ -73,12 +75,14 @@ public class ModConfigs {
     }
 
     private static void assignConfigs() {
-        BOT_TOKEN = CONFIG.getOrDefault("telegram_bot_token", "");
-        GROUP_ID = CONFIG.getOrDefault("telegram_group_id", "");
         ENABLED = CONFIG.getOrDefault("enabled", false);
-        PROXY_TYPE = CONFIG.getOrDefault("proxy_type", "");
-        PROXY_HOST = CONFIG.getOrDefault("proxy_host", "");
-        PROXY_PORT = CONFIG.getOrDefault("proxy_port", "");
+
+        BOT_TOKEN = CONFIG.getOrDefault("telegram.bot_token", "");
+        GROUP_ID = CONFIG.getOrDefault("telegram.group_id", "");
+
+        PROXY_TYPE = CONFIG.getOrDefault("proxy.type", "");
+        PROXY_HOST = CONFIG.getOrDefault("proxy.host", "");
+        PROXY_PORT = CONFIG.getOrDefault("proxy.port", "");
 
         FEATURE_STARTING_SERVER_MESSAGE = CONFIG.getOrDefault("feature.starting_server_message", true);
         FEATURE_SERVER_STARTED_AND_READY_MESSAGE = CONFIG.getOrDefault("feature.server_started_and_ready_message", true);
