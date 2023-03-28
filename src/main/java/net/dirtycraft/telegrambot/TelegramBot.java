@@ -34,6 +34,20 @@ public class TelegramBot implements ModInitializer {
 
 		if (!API.isValid()) {
 			LOGGER.warn("The mod is disabled");
+		} else {
+			String output = "ERROR";
+			try {
+				output = API.call("getme");
+			} catch (Exception e) {
+				output = "ERROR";
+			}
+
+			if (output == "ERROR") {
+				API.enabled = false;
+				LOGGER.error("Failed to connect to the bot");
+			} else {
+				LOGGER.info("Connected to the bot successfully: " + output);
+			}
 		}
 	}
 }
