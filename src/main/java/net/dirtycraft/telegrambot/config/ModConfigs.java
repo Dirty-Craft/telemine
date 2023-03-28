@@ -8,6 +8,7 @@ public class ModConfigs {
     private static ModConfigProvider configs;
 
     public static String BOT_TOKEN;
+    public static String PROXY;
     public static String GROUP_ID;
     public static boolean ENABLED;
 
@@ -23,6 +24,7 @@ public class ModConfigs {
     private static void createConfigs() {
         configs.addKeyValuePair(new Pair<>("telegram_bot_token", "<put the bot token here>"), "String");
         configs.addKeyValuePair(new Pair<>("telegram_group_id", "<put the group id here>"), "String");
+        configs.addKeyValuePair(new Pair<>("proxy", "<use proxy to call Telegram APIs if needed>"), "String");
         configs.addKeyValuePair(new Pair<>("enabled", false), "boolean");
     }
 
@@ -30,7 +32,8 @@ public class ModConfigs {
         BOT_TOKEN = CONFIG.getOrDefault("telegram_bot_token", "");
         GROUP_ID = CONFIG.getOrDefault("telegram_group_id", "");
         ENABLED = CONFIG.getOrDefault("enabled", false);
+        PROXY = CONFIG.getOrDefault("proxy", "");
 
-        TelegramBot.LOGGER.info("All " + configs.getConfigsList().size() + " have been set properly");
+        TelegramBot.LOGGER.info("All " + configs.getConfigsList().size() + " config options have been set properly");
     }
 }

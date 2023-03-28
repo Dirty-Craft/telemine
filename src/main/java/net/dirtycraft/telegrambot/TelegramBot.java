@@ -12,6 +12,7 @@ import net.dirtycraft.telegrambot.config.ModConfigs;
 public class TelegramBot implements ModInitializer {
 	public static final String MOD_ID = "telegrambot";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+	public static final TelegramAPI API = new TelegramAPI();
 
 	@Override
 	public void onInitialize() {
@@ -19,6 +20,19 @@ public class TelegramBot implements ModInitializer {
 		LOGGER.info("Hello Telegram Bot!");
 
 		if (!ModConfigs.ENABLED) {
+			//LOGGER.warn("The mod is disabled");
+		} else if (ModConfigs.BOT_TOKEN == "") {
+			LOGGER.warn("The Telegram bot token is not set in the configs");
+		} else if (ModConfigs.GROUP_ID == "") {
+			LOGGER.warn("The Telegram group ID is not set in the configs");
+		} else {
+			API.enabled = true;
+			API.botToken = ModConfigs.BOT_TOKEN;
+			API.groupID = ModConfigs.GROUP_ID;
+			API.proxy = ModConfigs.PROXY;
+		}
+
+		if (!API.isValid()) {
 			LOGGER.warn("The mod is disabled");
 		}
 	}
