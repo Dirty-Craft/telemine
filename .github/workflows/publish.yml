@@ -16,12 +16,12 @@ jobs:
       - name: Build the JAR
         run: |
           ./gradlew build
-          echo "jarfile=$(ls build/libs/*.jar)" >> $GITHUB_ENV
+          echo "modjarfile=$(ls build/libs/*.jar)" >> $GITHUB_ENV
       - name: Upload the mod to the CurseForge
         uses: itsmeow/curseforge-upload@v3
         id: upload_main_file
         with:
-          file_path: "${{ env.jarfile }}"
+          file_path: "${{ env.modjarfile }}"
           game_endpoint: "minecraft"
           game_versions: "9366"
           project_id: "${{ secrets.CF_PROJECT_ID }}"
