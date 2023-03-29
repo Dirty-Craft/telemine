@@ -14,6 +14,7 @@ public class TelegramAPI {
     public String botToken = null;
     public String groupID = null;
     public String proxyType = null;
+
     public String proxyHost = null;
     public String proxyPort = null;
 

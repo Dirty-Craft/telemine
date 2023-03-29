@@ -1,18 +1,10 @@
 package net.dirtycraft.telegrambot;
 
-import net.dirtycraft.telegrambot.handlers.PlayerDeathHandler;
+import net.dirtycraft.telegrambot.handlers.*;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
-import net.minecraft.server.network.ServerPlayerEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import net.dirtycraft.telegrambot.config.ModConfigs;
-import net.dirtycraft.telegrambot.commands.TgCommand;
-import net.dirtycraft.telegrambot.handlers.ServerStartedHandler;
-import net.dirtycraft.telegrambot.handlers.StartingServerHandler;
-import net.dirtycraft.telegrambot.handlers.StoppingServerHandler;
-import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 
 public class TelegramBot implements ModInitializer {
 	public static final String MOD_ID = "telegrambot";
@@ -58,29 +50,11 @@ public class TelegramBot implements ModInitializer {
 		}
 
 		if (API.isValid()) {
-			if (ModConfigs.FEATURE_STARTING_SERVER_MESSAGE) {
-				StartingServerHandler.handle(API, LOGGER);
-			}
-
-			if (ModConfigs.FEATURE_TG_SEND_MESSAGE_COMMAND) {
-				CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> TgCommand.register(dispatcher, API, ModConfigs.LANG_TG_COMMAND_SEND_MESSAGE_FORMAT));
-			}
-
-			if (ModConfigs.FEATURE_SERVER_STARTED_AND_READY_MESSAGE) {
-				ServerLifecycleEvents.SERVER_STARTED.register((dispatcher) -> ServerStartedHandler.handle(API, LOGGER));
-			}
-
-			if (ModConfigs.FEATURE_SERVER_SHUTDOWN_MESSAGE) {
-				ServerLifecycleEvents.SERVER_STOPPING.register((dispatcher) -> StoppingServerHandler.handle(API, LOGGER));
-			}
-
-			if (ModConfigs.FEATURE_PLAYER_DEATH_MESSAGES) {
-				ServerLivingEntityEvents.AFTER_DEATH.register((entity, damageSource) -> {
-					if (entity instanceof ServerPlayerEntity) {
-						PlayerDeathHandler.handle(API, LOGGER, damageSource, (ServerPlayerEntity) entity);
-					}
-				});
-			}
+			TgCommandHandler.register();
+			StartingServerHandler.register();
+			ServerStartedHandler.register();
+			StoppingServerHandler.register();
+			PlayerDeathHandler.register();
 		}
 	}
 }
