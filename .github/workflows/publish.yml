@@ -16,12 +16,11 @@ jobs:
       - name: Build the JAR
         run: |
           ./gradlew build
-          echo "modjarfile=$(ls build/libs/*.jar)" >> $GITHUB_ENV
       - name: Upload the mod to the CurseForge
         uses: itsmeow/curseforge-upload@v3
         id: upload_main_file
         with:
-          file_path: "${{ env.modjarfile }}"
+          file_path: "build/libs/telemine-0.0.1.jar"
           game_endpoint: "minecraft"
           game_versions: "9366"
           project_id: "${{ secrets.CF_PROJECT_ID }}"
