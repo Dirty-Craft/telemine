@@ -4,7 +4,7 @@ import net.dirtycraft.telegrambot.TelegramAPI;
 import org.slf4j.Logger;
 import net.dirtycraft.telegrambot.config.ModConfigs;
 
-class StartingServerHandler {
+public class StartingServerHandler {
     public static void handle(TelegramAPI API, Logger LOGGER)
     {
         LOGGER.info("Sending starting server message");

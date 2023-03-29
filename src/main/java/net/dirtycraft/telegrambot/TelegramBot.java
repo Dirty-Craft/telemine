@@ -15,7 +15,7 @@ import net.dirtycraft.telegrambot.handlers.StartingServerHandler;
 import java.net.Proxy;
 import static net.minecraft.server.command.CommandManager.*;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
-import net.fabricmc.fabric.api.event.server.ServerStartCallback;
+//import net.fabricmc.fabric.api.event.server.ServerStartCallback;
 
 public class TelegramBot implements ModInitializer {
 	public static final String MOD_ID = "telegrambot";
@@ -70,7 +70,7 @@ public class TelegramBot implements ModInitializer {
 			}
 
 			if (ModConfigs.FEATURE_SERVER_STARTED_AND_READY_MESSAGE) {
-				ServerStartCallback.EVENT.register((dispatcher, registryAccess, environment) -> ServerStartHandler.handle(API, LOGGER));
+				//ServerStartCallback.EVENT.register((dispatcher, registryAccess, environment) -> ServerStartHandler.handle(API, LOGGER));
 			}
 		}
 	}
