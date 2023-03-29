@@ -69,4 +69,4 @@ and is licensed under [MIT License](LICENSE).
 ## Contribution
 If you want to contribute to this project,
 you can checkout the [TODO list](TODO.md) and
-[Issues](https://github.com/Dirty-Craft/telemine).
+[Issues](https://github.com/Dirty-Craft/telemine/issues).
