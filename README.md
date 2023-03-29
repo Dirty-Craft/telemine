@@ -1,4 +1,4 @@
-# MineCraft Server Telegram Bot
+# Telemine - A MineCraft mod
 This is a very useful mod for SMP servers.
 Usually when you a MineCraft survival server that you play on it with your friends, you also have a Telegram group.
 This mod helps you to have lots interactions between server and your group.
