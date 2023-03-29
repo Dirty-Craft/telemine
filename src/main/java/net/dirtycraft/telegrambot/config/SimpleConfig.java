@@ -22,6 +22,7 @@
 
 package net.dirtycraft.telegrambot.config;
 
+import net.dirtycraft.telegrambot.TelegramBot;
 import net.fabricmc.loader.api.FabricLoader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -35,7 +36,7 @@ import java.util.Scanner;
 
 public class SimpleConfig {
 
-    private static final Logger LOGGER = LogManager.getLogger("telegrambot");
+    private static final Logger LOGGER = LogManager.getLogger(TelegramBot.MOD_ID);
     private final HashMap<String, String> config = new HashMap<>();
     private final ConfigRequest request;
     private boolean broken = false;
