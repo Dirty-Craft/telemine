@@ -1,8 +1,11 @@
 package net.dirtycraft.telegrambot;
 
+import net.dirtycraft.telegrambot.handlers.PlayerDeathHandler;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 import net.minecraft.text.Text;
 import net.minecraft.util.registry.Registry;
@@ -76,6 +79,14 @@ public class TelegramBot implements ModInitializer {
 
 			if (ModConfigs.FEATURE_SERVER_SHUTDOWN_MESSAGE) {
 				ServerLifecycleEvents.SERVER_STOPPING.register((dispatcher) -> StoppingServerHandler.handle(API, LOGGER));
+			}
+
+			if (ModConfigs.FEATURE_PLAYER_DEATH_MESSAGES) {
+				ServerLivingEntityEvents.AFTER_DEATH.register((entity, damageSource) -> {
+					if (entity instanceof ServerPlayerEntity) {
+						PlayerDeathHandler.handle(API, LOGGER, damageSource, (ServerPlayerEntity) entity);
+					}
+				});
 			}
 		}
 	}

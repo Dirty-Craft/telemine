@@ -71,7 +71,7 @@ public class ModConfigs {
         configs.addKeyValuePair(new Pair<>("lang.online_players_list_message", "Online players in the server: {list}"), "String");
         configs.addKeyValuePair(new Pair<>("lang.player_join_message", "{name} joined the server"), "String");
         configs.addKeyValuePair(new Pair<>("lang.player_left_message", "{name} left the server"), "String");
-        configs.addKeyValuePair(new Pair<>("lang.player_death_message", "{death_message}"), "String");
+        configs.addKeyValuePair(new Pair<>("lang.player_death_message", "{player_name} {death_message}"), "String");
         configs.addKeyValuePair(new Pair<>("lang.tg_command_send_message_format", "{player_name}: {message}"), "String");
         configs.addKeyValuePair(new Pair<>("lang.advancement_made_message", "{advancement_message}"), "String");
     }
@@ -103,7 +103,7 @@ public class ModConfigs {
         LANG_ONLINE_PLAYERS_LIST_MESSAGE = CONFIG.getOrDefault("lang.online_players_list_message", "Online players in the server: {list}");
         LANG_PLAYER_JOIN_MESSAGE = CONFIG.getOrDefault("lang.player_join_message", "{name} joined the server");
         LANG_PLAYER_LEFT_MESSAGE = CONFIG.getOrDefault("lang.player_left_message", "{name} left the server");
-        LANG_PLAYER_DEATH_MESSAGE = CONFIG.getOrDefault("lang.player_death_message", "{death_message}");
+        LANG_PLAYER_DEATH_MESSAGE = CONFIG.getOrDefault("lang.player_death_message", "{player_name} {death_message}");
         LANG_TG_COMMAND_SEND_MESSAGE_FORMAT = CONFIG.getOrDefault("lang.tg_command_send_message_format", "{player_name}: {message}");
         LANG_ADVANCEMENT_MADE_MESSAGE = CONFIG.getOrDefault("lang.advancement_made_message", "{advancement_message}");
 
