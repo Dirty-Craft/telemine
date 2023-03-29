@@ -6,3 +6,4 @@
 - Send the death messages
 - Send the advancement messages
 - Automatic deployment to the Curseforge
+- Cleanup and refactor

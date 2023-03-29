@@ -10,9 +10,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import net.dirtycraft.telegrambot.config.ModConfigs;
 import net.dirtycraft.telegrambot.commands.TgCommand;
+import net.dirtycraft.telegrambot.handlers.ServerStartHandler;
+import net.dirtycraft.telegrambot.handlers.StartingServerHandler;
 import java.net.Proxy;
 import static net.minecraft.server.command.CommandManager.*;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import net.fabricmc.fabric.api.event.server.ServerStartCallback;
 
 public class TelegramBot implements ModInitializer {
 	public static final String MOD_ID = "telegrambot";
@@ -57,12 +60,18 @@ public class TelegramBot implements ModInitializer {
 			}
 		}
 
-		if (API.isValid() && ModConfigs.FEATURE_STARTING_SERVER_MESSAGE) {
-			API.sendMessage(ModConfigs.LANG_STARTING_SERVER_MESSAGE);
-		}
+		if (API.isValid()) {
+			if (ModConfigs.FEATURE_STARTING_SERVER_MESSAGE) {
+				StartingServerHandler.handle(API, LOGGER);
+			}
 
-		if (API.isValid() && ModConfigs.FEATURE_TG_SEND_MESSAGE_COMMAND) {
-			CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> TgCommand.register(dispatcher, API, ModConfigs.LANG_TG_COMMAND_SEND_MESSAGE_FORMAT));
+			if (ModConfigs.FEATURE_TG_SEND_MESSAGE_COMMAND) {
+				CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> TgCommand.register(dispatcher, API, ModConfigs.LANG_TG_COMMAND_SEND_MESSAGE_FORMAT));
+			}
+
+			if (ModConfigs.FEATURE_SERVER_STARTED_AND_READY_MESSAGE) {
+				ServerStartCallback.EVENT.register((dispatcher, registryAccess, environment) -> ServerStartHandler.handle(API, LOGGER));
+			}
 		}
 	}
 }
