@@ -9,7 +9,7 @@ import net.dirtycraft.telegrambot.config.ModConfigs;
 public class TelegramBot implements ModInitializer {
 	public static final String MOD_ID = "telegrambot";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-	public static final TelegramAPI API = new TelegramAPI();
+	public static final Api API = new Api();
 
 	@Override
 	public void onInitialize() {

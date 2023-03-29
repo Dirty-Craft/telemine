@@ -9,7 +9,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.BufferedReader;
 
-public class TelegramAPI {
+public class Api {
     public boolean enabled = false;
     public String botToken = null;
     public String groupID = null;

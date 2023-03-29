@@ -1,12 +1,10 @@
 package net.dirtycraft.telegrambot.handlers;
 
-import net.dirtycraft.telegrambot.TelegramAPI;
 import net.dirtycraft.telegrambot.config.ModConfigs;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import org.apache.commons.lang3.StringUtils;
-import org.spongepowered.asm.mixin.Final;
 
 public class PlayerDeathHandler extends Handler {
     public static boolean ENABLED = ModConfigs.FEATURE_PLAYER_DEATH_MESSAGES;
