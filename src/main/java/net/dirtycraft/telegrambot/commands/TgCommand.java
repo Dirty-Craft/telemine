@@ -1,11 +1,9 @@
 package net.dirtycraft.telegrambot.commands;
 
 import static net.minecraft.server.command.CommandManager.*;
-import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.text.Text;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.StringArgumentType;
-import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import net.minecraft.server.command.ServerCommandSource;
 import net.dirtycraft.telegrambot.TelegramAPI;
 
