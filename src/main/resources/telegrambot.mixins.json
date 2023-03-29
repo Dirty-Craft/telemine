@@ -6,7 +6,6 @@
   "mixins": [
   ],
   "client": [
-    "TelegramBotMixin"
   ],
   "injectors": {
     "defaultRequire": 1
