@@ -1,0 +1,25 @@
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  publish-to-curseforge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Java
+        uses: actions/setup-java@v2
+      - name: Build the JAR
+        run: |
+          ./gradlew build
+          echo "jarfile=$(ls build/libs/*.jar)" >> $GITHUB_ENV
+      - name: Upload the mod to the CurseForge
+        uses: itsmeow/curseforge-upload@v3
+        id: upload_main_file
+        with:
+          file_path: "${{ env.jarfile }}"
+          game_endpoint: "minecraft"
+          game_versions: "9366"
+          project_id: "${{ secrets.CF_PROJECT_ID }}"
+          token: "${{ secrets.CF_API_TOKEN }}"
