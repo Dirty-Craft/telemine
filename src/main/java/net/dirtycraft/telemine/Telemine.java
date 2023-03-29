@@ -1,13 +1,13 @@
-package net.dirtycraft.telegrambot;
+package net.dirtycraft.telemine;
 
-import net.dirtycraft.telegrambot.handlers.*;
+import net.dirtycraft.telemine.handlers.*;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import net.dirtycraft.telegrambot.config.ModConfigs;
+import net.dirtycraft.telemine.config.ModConfigs;
 
-public class TelegramBot implements ModInitializer {
-	public static final String MOD_ID = "telegrambot";
+public class Telemine implements ModInitializer {
+	public static final String MOD_ID = "telemine";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 	public static final Api API = new Api();
 

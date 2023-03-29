@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "telegrambot",
+  "id": "telemine",
   "version": "${version}",
 
   "name": "Minecraft Server Telegram Bot",
@@ -9,21 +9,21 @@
     "Parsa Shahmaleki"
   ],
   "contact": {
-    "homepage": "https://github.com/Dirty-Craft/telegrambot/",
-    "sources": "https://github.com/Dirty-Craft/telegrambot/"
+    "homepage": "https://github.com/Dirty-Craft/telemine/",
+    "sources": "https://github.com/Dirty-Craft/telemine/"
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/telegrambot/icon.png",
+  "icon": "assets/telemine/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.dirtycraft.telegrambot.TelegramBot"
+      "net.dirtycraft.telemine.Telemine"
     ]
   },
   "mixins": [
-    "telegrambot.mixins.json"
+    "telemine.mixins.json"
   ],
 
   "depends": {

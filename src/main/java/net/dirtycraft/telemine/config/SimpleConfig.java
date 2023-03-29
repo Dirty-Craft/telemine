@@ -20,9 +20,9 @@
  * THE SOFTWARE.
  */
 
-package net.dirtycraft.telegrambot.config;
+package net.dirtycraft.telemine.config;
 
-import net.dirtycraft.telegrambot.TelegramBot;
+import net.dirtycraft.telemine.Telemine;
 import net.fabricmc.loader.api.FabricLoader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -36,7 +36,7 @@ import java.util.Scanner;
 
 public class SimpleConfig {
 
-    private static final Logger LOGGER = LogManager.getLogger(TelegramBot.MOD_ID);
+    private static final Logger LOGGER = LogManager.getLogger(Telemine.MOD_ID);
     private final HashMap<String, String> config = new HashMap<>();
     private final ConfigRequest request;
     private boolean broken = false;

@@ -1,6 +1,6 @@
-package net.dirtycraft.telegrambot.handlers;
+package net.dirtycraft.telemine.handlers;
 
-import net.dirtycraft.telegrambot.config.ModConfigs;
+import net.dirtycraft.telemine.config.ModConfigs;
 
 public class StartingServerHandler extends Handler {
     public static boolean ENABLED = ModConfigs.FEATURE_STARTING_SERVER_MESSAGE;

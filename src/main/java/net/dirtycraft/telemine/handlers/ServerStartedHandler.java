@@ -1,7 +1,7 @@
-package net.dirtycraft.telegrambot.handlers;
+package net.dirtycraft.telemine.handlers;
 
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
-import net.dirtycraft.telegrambot.config.ModConfigs;
+import net.dirtycraft.telemine.config.ModConfigs;
 
 public class ServerStartedHandler extends Handler {
     public static boolean ENABLED = ModConfigs.FEATURE_SERVER_STARTED_AND_READY_MESSAGE;

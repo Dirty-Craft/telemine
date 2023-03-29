@@ -1,4 +1,4 @@
-package net.dirtycraft.telegrambot.config;
+package net.dirtycraft.telemine.config;
 
 import com.mojang.datafixers.util.Pair;
 import java.util.ArrayList;

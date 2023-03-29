@@ -1,4 +1,4 @@
-package net.dirtycraft.telegrambot;
+package net.dirtycraft.telemine;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -49,7 +49,7 @@ public class Api {
 
     public String sendMessage(String text)
     {
-        TelegramBot.LOGGER.info("Sending a message to the Telegram group: " + text);
+        Telemine.LOGGER.info("Sending a message to the Telegram group: " + text);
         return post("sendMessage", "chat_id=" + groupID + "&text=" + text);
     }
 

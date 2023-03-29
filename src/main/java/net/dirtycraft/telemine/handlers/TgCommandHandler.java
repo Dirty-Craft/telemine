@@ -1,8 +1,8 @@
-package net.dirtycraft.telegrambot.handlers;
+package net.dirtycraft.telemine.handlers;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.StringArgumentType;
-import net.dirtycraft.telegrambot.config.ModConfigs;
+import net.dirtycraft.telemine.config.ModConfigs;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.text.Text;

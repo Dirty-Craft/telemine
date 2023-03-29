@@ -1,6 +1,6 @@
-package net.dirtycraft.telegrambot.handlers;
+package net.dirtycraft.telemine.handlers;
 
-import net.dirtycraft.telegrambot.config.ModConfigs;
+import net.dirtycraft.telemine.config.ModConfigs;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.server.network.ServerPlayerEntity;

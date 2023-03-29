@@ -1,7 +1,7 @@
-package net.dirtycraft.telegrambot.config;
+package net.dirtycraft.telemine.config;
 
 import com.mojang.datafixers.util.Pair;
-import net.dirtycraft.telegrambot.TelegramBot;
+import net.dirtycraft.telemine.Telemine;
 
 public class ModConfigs {
     public static SimpleConfig CONFIG;
@@ -39,7 +39,7 @@ public class ModConfigs {
         configs = new ModConfigProvider();
         createConfigs();
 
-        CONFIG = SimpleConfig.of(TelegramBot.MOD_ID).provider(configs).request();
+        CONFIG = SimpleConfig.of(Telemine.MOD_ID).provider(configs).request();
 
         assignConfigs();
     }
@@ -107,6 +107,6 @@ public class ModConfigs {
         LANG_TG_COMMAND_SEND_MESSAGE_FORMAT = CONFIG.getOrDefault("lang.tg_command_send_message_format", LANG_TG_COMMAND_SEND_MESSAGE_FORMAT);
         LANG_ADVANCEMENT_MADE_MESSAGE = CONFIG.getOrDefault("lang.advancement_made_message", LANG_ADVANCEMENT_MADE_MESSAGE);
 
-        TelegramBot.LOGGER.info("All " + configs.getConfigsList().size() + " config options have been set properly");
+        Telemine.LOGGER.info("All " + configs.getConfigsList().size() + " config options have been set properly");
     }
 }
