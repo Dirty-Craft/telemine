@@ -10,12 +10,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import net.dirtycraft.telegrambot.config.ModConfigs;
 import net.dirtycraft.telegrambot.commands.TgCommand;
-import net.dirtycraft.telegrambot.handlers.ServerStartHandler;
+import net.dirtycraft.telegrambot.handlers.ServerStartedHandler;
 import net.dirtycraft.telegrambot.handlers.StartingServerHandler;
+import net.dirtycraft.telegrambot.handlers.StoppingServerHandler;
 import java.net.Proxy;
 import static net.minecraft.server.command.CommandManager.*;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
-//import net.fabricmc.fabric.api.event.server.ServerStartCallback;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 
 public class TelegramBot implements ModInitializer {
 	public static final String MOD_ID = "telegrambot";
@@ -70,7 +71,11 @@ public class TelegramBot implements ModInitializer {
 			}
 
 			if (ModConfigs.FEATURE_SERVER_STARTED_AND_READY_MESSAGE) {
-				//ServerStartCallback.EVENT.register((dispatcher, registryAccess, environment) -> ServerStartHandler.handle(API, LOGGER));
+				ServerLifecycleEvents.SERVER_STARTED.register((dispatcher) -> ServerStartedHandler.handle(API, LOGGER));
+			}
+
+			if (ModConfigs.FEATURE_SERVER_SHUTDOWN_MESSAGE) {
+				ServerLifecycleEvents.SERVER_STOPPING.register((dispatcher) -> StoppingServerHandler.handle(API, LOGGER));
 			}
 		}
 	}
