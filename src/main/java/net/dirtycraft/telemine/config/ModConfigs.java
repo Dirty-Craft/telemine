@@ -28,7 +28,7 @@ public class ModConfigs {
     public static String LANG_STARTING_SERVER_MESSAGE = "Starting the server...";
     public static String LANG_SERVER_STARTED_AND_READY_MESSAGE = "Server is up!";
     public static String LANG_SERVER_SHUTDOWN_MESSAGE = "Shutting down the server...";
-    public static String LANG_ONLINE_PLAYERS_LIST_MESSAGE = "Online players in the server: {list}";
+    public static String LANG_ONLINE_PLAYERS_LIST_MESSAGE = "There are {count} of a max of {max_count} players online: {list}";
     public static String LANG_PLAYER_JOIN_MESSAGE = "{name} joined the server";
     public static String LANG_PLAYER_LEFT_MESSAGE = "{name} left the server";
     public static String LANG_PLAYER_DEATH_MESSAGE = "{player_name} {death_message}";

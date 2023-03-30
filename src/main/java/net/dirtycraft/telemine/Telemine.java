@@ -55,6 +55,8 @@ public class Telemine implements ModInitializer {
 			ServerStartedHandler.register();
 			StoppingServerHandler.register();
 			PlayerDeathHandler.register();
+			PlayerJoinHandler.register();
+			PlayerLeaveHandler.register();
 		}
 	}
 }
