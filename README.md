@@ -12,6 +12,7 @@ These are some features:
 - Sends the death messages
 - Sends the advancement messages
 - Adds `/tg` command that allows players to send a message in the group from the server chat
+- Adds `/tg-multiline` to send multiline messages by replacing every `\n` with new line
 - Ability to set general header and footer for all of messages
 - Every feature is configurable and can be enabled/disabled
 - All text messages are customizable in the config
