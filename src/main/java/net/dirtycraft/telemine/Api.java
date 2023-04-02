@@ -57,8 +57,8 @@ public class Api {
     public String sendMessage(String text, boolean includeHeaderAndFooter)
     {
         if (includeHeaderAndFooter) {
-            text = text.replaceAll("\\{general_header\\}", ModConfigs.LANG_GENERAL_MESSAGE_HEADER);
-            text = text.replaceAll("\\{general_footer\\}", ModConfigs.LANG_GENERAL_MESSAGE_FOOTER);
+            text = ModConfigs.LANG_GENERAL_MESSAGE_HEADER + text + "\n";
+            text += "\n" + ModConfigs.LANG_GENERAL_MESSAGE_FOOTER;
         }
 
         Telemine.LOGGER.info("Sending a message to the Telegram group: " + text);
