@@ -59,6 +59,7 @@ public class Api {
         if (includeHeaderAndFooter) {
             text = ModConfigs.LANG_GENERAL_MESSAGE_HEADER + "\n" + text;
             text += "\n" + ModConfigs.LANG_GENERAL_MESSAGE_FOOTER;
+            text = text.replaceAll("\\n", "\n");
             text = text.strip();
         }
 
