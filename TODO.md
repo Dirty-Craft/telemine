@@ -1,4 +1,4 @@
 # TODO
 
 - Send the advancement messages
-- Add general variables to all of message configs 
+- Add ability to set general header and footer for all of the messages
