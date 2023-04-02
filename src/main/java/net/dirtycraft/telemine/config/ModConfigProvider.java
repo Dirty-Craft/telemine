@@ -36,7 +36,8 @@ public class ModConfigProvider implements SimpleConfig.DefaultConfig {
         }
 
         if (keyValuePair.getFirst().equals("lang.starting_server_message")) {
-            configContents += "# The `lang.*` options can be used to customize different messages that bot sends in the group\n";
+            configContents += "# The `lang.*` options can be used to customize different messages that bot sends in the group\n" +
+                    "# Also you can use `\\n` to break the line and write multiline content\n";
         }
 
         configContents += keyValuePair.getFirst() + "=" + keyValuePair.getSecond() + "\n";
