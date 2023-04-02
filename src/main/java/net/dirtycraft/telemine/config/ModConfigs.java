@@ -34,6 +34,8 @@ public class ModConfigs {
     public static String LANG_PLAYER_DEATH_MESSAGE = "{player_name} {death_message}";
     public static String LANG_TG_COMMAND_SEND_MESSAGE_FORMAT = "{player_name}: {message}";
     public static String LANG_ADVANCEMENT_MADE_MESSAGE = "{advancement_message}";
+    public static String LANG_GENERAL_MESSAGE_HEADER = "";
+    public static String LANG_GENERAL_MESSAGE_FOOTER = "";
 
     public static void registerConfigs() {
         configs = new ModConfigProvider();
@@ -74,6 +76,8 @@ public class ModConfigs {
         configs.addKeyValuePair(new Pair<>("lang.player_death_message", LANG_PLAYER_DEATH_MESSAGE), "String");
         configs.addKeyValuePair(new Pair<>("lang.tg_command_send_message_format", LANG_TG_COMMAND_SEND_MESSAGE_FORMAT), "String");
         configs.addKeyValuePair(new Pair<>("lang.advancement_made_message", LANG_ADVANCEMENT_MADE_MESSAGE), "String");
+        configs.addKeyValuePair(new Pair<>("lang.general_message_header", LANG_GENERAL_MESSAGE_HEADER), "String");
+        configs.addKeyValuePair(new Pair<>("lang.general_message_footer", LANG_GENERAL_MESSAGE_FOOTER), "String");
     }
 
     private static void assignConfigs() {
@@ -106,6 +110,8 @@ public class ModConfigs {
         LANG_PLAYER_DEATH_MESSAGE = CONFIG.getOrDefault("lang.player_death_message", LANG_PLAYER_DEATH_MESSAGE);
         LANG_TG_COMMAND_SEND_MESSAGE_FORMAT = CONFIG.getOrDefault("lang.tg_command_send_message_format", LANG_TG_COMMAND_SEND_MESSAGE_FORMAT);
         LANG_ADVANCEMENT_MADE_MESSAGE = CONFIG.getOrDefault("lang.advancement_made_message", LANG_ADVANCEMENT_MADE_MESSAGE);
+        LANG_GENERAL_MESSAGE_HEADER = CONFIG.getOrDefault("lang.general_message_header", LANG_GENERAL_MESSAGE_HEADER);
+        LANG_GENERAL_MESSAGE_FOOTER = CONFIG.getOrDefault("lang.general_message_footer", LANG_GENERAL_MESSAGE_FOOTER);
 
         Telemine.LOGGER.info("All " + configs.getConfigsList().size() + " config options have been set properly");
     }

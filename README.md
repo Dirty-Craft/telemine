@@ -12,6 +12,7 @@ These are some features:
 - Sends the death messages
 - Sends the advancement messages
 - Adds `/tg` command that allows players to send a message in the group from the server chat
+- Ability to set general header and footer for all of messages
 - Every feature is configurable and can be enabled/disabled
 - All text messages are customizable in the config
 
@@ -59,6 +60,8 @@ lang.player_left_message={name} left the server
 lang.player_death_message={death_message}
 lang.tg_command_send_message_format={player_name}: {message}
 lang.advancement_made_message={advancement_message}
+lang.general_message_header=
+lang.general_message_footer=
 ```
 
 ## Authors

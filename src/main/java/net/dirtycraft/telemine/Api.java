@@ -1,5 +1,7 @@
 package net.dirtycraft.telemine;
 
+import net.dirtycraft.telemine.config.ModConfigs;
+
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.Proxy;
@@ -42,13 +44,23 @@ public class Api {
         return call(uri, "GET", "");
     }
 
-    public String post(String uri, String payloadJson)
+    public String post(String uri, String payload)
     {
-        return call(uri, "POST", payloadJson);
+        return call(uri, "POST", payload);
     }
 
     public String sendMessage(String text)
     {
+        return sendMessage(text, true);
+    }
+
+    public String sendMessage(String text, boolean includeHeaderAndFooter)
+    {
+        if (includeHeaderAndFooter) {
+            text = text.replaceAll("\\{general_header\\}", ModConfigs.LANG_GENERAL_MESSAGE_HEADER);
+            text = text.replaceAll("\\{general_footer\\}", ModConfigs.LANG_GENERAL_MESSAGE_FOOTER);
+        }
+
         Telemine.LOGGER.info("Sending a message to the Telegram group: " + text);
         return post("sendMessage", "chat_id=" + groupID + "&text=" + text);
     }
