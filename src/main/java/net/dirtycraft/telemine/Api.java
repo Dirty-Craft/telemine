@@ -62,6 +62,7 @@ public class Api {
         }
 
         text = text.replaceAll("\\\\n", "\n");
+        text = text.replaceAll("%n", "\n");
         text = text.strip();
 
         Telemine.LOGGER.info("Sending a message to the Telegram group: " + text);
