@@ -22,6 +22,8 @@ public class ModConfigs {
     public static boolean FEATURE_PLAYER_LEAVE_MESSAGE_SHOW_ONLINE_PLAYERS_LIST = true;
     public static boolean FEATURE_PLAYER_DEATH_MESSAGES = true;
     public static boolean FEATURE_ADVANCEMENT_MADE_MESSAGES = true;
+    public static boolean FEATURE_MONITOR_COMMAND_EXECUTIONS = false;
+    public static String FEATURE_MONITOR_COMMAND_EXECUTIONS_CHAT_ID = "";
     public static boolean FEATURE_TG_SEND_MESSAGE_COMMAND = true;
 
     public static String LANG_STARTING_SERVER_MESSAGE = "Starting the server...";
@@ -31,6 +33,7 @@ public class ModConfigs {
     public static String LANG_PLAYER_JOIN_MESSAGE = "{name} joined the server";
     public static String LANG_PLAYER_LEFT_MESSAGE = "{name} left the server";
     public static String LANG_PLAYER_DEATH_MESSAGE = "{player_name} {death_message}";
+    public static String LANG_COMMAND_REPORT_MESSAGE = "{player_name} entered a command: {command}";
     public static String LANG_TG_COMMAND_SEND_MESSAGE_FORMAT = "{player_name}: {message}";
     public static String LANG_ADVANCEMENT_MADE_MESSAGE = "{advancement_message}";
     public static String LANG_GENERAL_MESSAGE_HEADER = "";
@@ -63,6 +66,8 @@ public class ModConfigs {
         configs.addKeyValuePair(new Pair<>("feature.player_leave_message_show_online_players_list", FEATURE_PLAYER_LEAVE_MESSAGE_SHOW_ONLINE_PLAYERS_LIST), "boolean");
         configs.addKeyValuePair(new Pair<>("feature.player_death_messages", FEATURE_PLAYER_DEATH_MESSAGES), "boolean");
         configs.addKeyValuePair(new Pair<>("feature.advancement_made_messages", FEATURE_ADVANCEMENT_MADE_MESSAGES), "boolean");
+        configs.addKeyValuePair(new Pair<>("feature.monitor_command_executions", FEATURE_MONITOR_COMMAND_EXECUTIONS), "boolean");
+        configs.addKeyValuePair(new Pair<>("feature.monitor_command_executions_chat_id", FEATURE_MONITOR_COMMAND_EXECUTIONS_CHAT_ID), "String");
         configs.addKeyValuePair(new Pair<>("feature.tg_send_message_command", FEATURE_TG_SEND_MESSAGE_COMMAND), "boolean");
 
         configs.addKeyValuePair(new Pair<>("lang.starting_server_message", LANG_STARTING_SERVER_MESSAGE), "String");
@@ -72,6 +77,7 @@ public class ModConfigs {
         configs.addKeyValuePair(new Pair<>("lang.player_join_message", LANG_PLAYER_JOIN_MESSAGE), "String");
         configs.addKeyValuePair(new Pair<>("lang.player_left_message", LANG_PLAYER_LEFT_MESSAGE), "String");
         configs.addKeyValuePair(new Pair<>("lang.player_death_message", LANG_PLAYER_DEATH_MESSAGE), "String");
+        configs.addKeyValuePair(new Pair<>("lang.command_report_message", LANG_COMMAND_REPORT_MESSAGE), "String");
         configs.addKeyValuePair(new Pair<>("lang.tg_command_send_message_format", LANG_TG_COMMAND_SEND_MESSAGE_FORMAT), "String");
         configs.addKeyValuePair(new Pair<>("lang.advancement_made_message", LANG_ADVANCEMENT_MADE_MESSAGE), "String");
         configs.addKeyValuePair(new Pair<>("lang.general_message_header", LANG_GENERAL_MESSAGE_HEADER), "String");
@@ -96,6 +102,8 @@ public class ModConfigs {
         FEATURE_PLAYER_LEAVE_MESSAGE_SHOW_ONLINE_PLAYERS_LIST = CONFIG.getOrDefault("feature.player_leave_message_show_online_players_list", FEATURE_PLAYER_LEAVE_MESSAGE_SHOW_ONLINE_PLAYERS_LIST);
         FEATURE_PLAYER_DEATH_MESSAGES = CONFIG.getOrDefault("feature.player_death_messages", FEATURE_PLAYER_DEATH_MESSAGES);
         FEATURE_ADVANCEMENT_MADE_MESSAGES = CONFIG.getOrDefault("feature.advancement_made_messages", FEATURE_ADVANCEMENT_MADE_MESSAGES);
+        FEATURE_MONITOR_COMMAND_EXECUTIONS = CONFIG.getOrDefault("feature.monitor_command_executions", FEATURE_MONITOR_COMMAND_EXECUTIONS);
+        FEATURE_MONITOR_COMMAND_EXECUTIONS_CHAT_ID = CONFIG.getOrDefault("feature.monitor_command_executions_chat_id", FEATURE_MONITOR_COMMAND_EXECUTIONS_CHAT_ID);
         FEATURE_TG_SEND_MESSAGE_COMMAND = CONFIG.getOrDefault("feature.tg_send_message_command", FEATURE_TG_SEND_MESSAGE_COMMAND);
 
         LANG_STARTING_SERVER_MESSAGE = CONFIG.getOrDefault("lang.starting_server_message", LANG_STARTING_SERVER_MESSAGE);
@@ -105,6 +113,7 @@ public class ModConfigs {
         LANG_PLAYER_JOIN_MESSAGE = CONFIG.getOrDefault("lang.player_join_message", LANG_PLAYER_JOIN_MESSAGE);
         LANG_PLAYER_LEFT_MESSAGE = CONFIG.getOrDefault("lang.player_left_message", LANG_PLAYER_LEFT_MESSAGE);
         LANG_PLAYER_DEATH_MESSAGE = CONFIG.getOrDefault("lang.player_death_message", LANG_PLAYER_DEATH_MESSAGE);
+        LANG_COMMAND_REPORT_MESSAGE = CONFIG.getOrDefault("lang.command_report_message", LANG_COMMAND_REPORT_MESSAGE);
         LANG_TG_COMMAND_SEND_MESSAGE_FORMAT = CONFIG.getOrDefault("lang.tg_command_send_message_format", LANG_TG_COMMAND_SEND_MESSAGE_FORMAT);
         LANG_ADVANCEMENT_MADE_MESSAGE = CONFIG.getOrDefault("lang.advancement_made_message", LANG_ADVANCEMENT_MADE_MESSAGE);
         LANG_GENERAL_MESSAGE_HEADER = CONFIG.getOrDefault("lang.general_message_header", LANG_GENERAL_MESSAGE_HEADER);

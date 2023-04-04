@@ -50,10 +50,14 @@ public class Api {
 
     public String sendMessage(String text)
     {
-        return sendMessage(text, true);
+        return sendMessage(text, true, "");
+    }
+    public String sendMessage(String text, String chatID)
+    {
+        return sendMessage(text, true, chatID);
     }
 
-    public String sendMessage(String text, boolean includeHeaderAndFooter)
+    public String sendMessage(String text, boolean includeHeaderAndFooter, String customChatID)
     {
         if (includeHeaderAndFooter) {
             text = ModConfigs.LANG_GENERAL_MESSAGE_HEADER + "\n" + text;
@@ -64,8 +68,13 @@ public class Api {
         text = text.replaceAll("%n", "\n");
         text = text.strip();
 
+        String groupIdToUse = groupID;
+        if (!customChatID.isEmpty()) {
+            groupIdToUse = customChatID;
+        }
+
         Telemine.LOGGER.info("Sending a message to the Telegram group: " + text);
-        return post("sendMessage", "chat_id=" + groupID + "&text=" + text);
+        return post("sendMessage", "chat_id=" + groupIdToUse + "&text=" + text);
     }
 
     public String call(String uri, String method, String payload)

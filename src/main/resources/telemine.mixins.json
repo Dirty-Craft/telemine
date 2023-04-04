@@ -4,6 +4,7 @@
   "package": "net.dirtycraft.telemine.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "CommandManagerMixin"
   ],
   "client": [
   ],
