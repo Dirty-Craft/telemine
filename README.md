@@ -13,6 +13,7 @@ These are some features:
 - Sends the advancement messages
 - Adds `/tg` command that allows players to send a message in the group from the server chat and you can send multiline messages by using `%n` where ever you want to break the line
 - Ability to set general header and footer for all of messages
+- Ability to set HTTP proxy for calling Telegram APIs
 - Every feature is configurable and can be enabled/disabled
 - All text messages are customizable in the config
 
@@ -27,14 +28,9 @@ enabled=false
 telegram.bot_token=
 telegram.group_id=
 
-# You can set a proxy for calling the Telegram APIs if you want
-proxy.type=
+# You can set a HTTP proxy for calling the Telegram APIs if you want
 proxy.host=
 proxy.port=
-# The proxy.type can be "http" or "socks". Example:
-#proxy.type=socks
-#proxy.host=127.0.0.1
-#proxy.port=1080
 
 # The `feature.*` options can be used to enable/disable different features
 # All the features and enabled by default

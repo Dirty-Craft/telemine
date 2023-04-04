@@ -10,7 +10,6 @@ public class ModConfigs {
     public static boolean ENABLED = false;
     public static String BOT_TOKEN = "";
     public static String GROUP_ID = "";
-    public static String PROXY_TYPE = "";
     public static String PROXY_HOST = "";
     public static String PROXY_PORT = "";
 
@@ -52,7 +51,6 @@ public class ModConfigs {
         configs.addKeyValuePair(new Pair<>("telegram.bot_token", BOT_TOKEN), "String");
         configs.addKeyValuePair(new Pair<>("telegram.group_id", GROUP_ID), "String");
 
-        configs.addKeyValuePair(new Pair<>("proxy.type", PROXY_TYPE), "String");
         configs.addKeyValuePair(new Pair<>("proxy.host", PROXY_HOST), "String");
         configs.addKeyValuePair(new Pair<>("proxy.port", PROXY_PORT), "String");
 
@@ -86,7 +84,6 @@ public class ModConfigs {
         BOT_TOKEN = CONFIG.getOrDefault("telegram.bot_token", BOT_TOKEN);
         GROUP_ID = CONFIG.getOrDefault("telegram.group_id", GROUP_ID);
 
-        PROXY_TYPE = CONFIG.getOrDefault("proxy.type", PROXY_TYPE);
         PROXY_HOST = CONFIG.getOrDefault("proxy.host", PROXY_HOST);
         PROXY_PORT = CONFIG.getOrDefault("proxy.port", PROXY_PORT);
 

@@ -25,8 +25,8 @@ public class ModConfigProvider implements SimpleConfig.DefaultConfig {
             configContents += "# Here you have to set bot token and also group chat id\n";
         }
 
-        if (keyValuePair.getFirst().equals("proxy.type")) {
-            configContents += "# You can set a proxy for calling the Telegram APIs if you want\n";
+        if (keyValuePair.getFirst().equals("proxy.host")) {
+            configContents += "# You can set a HTTP proxy for calling the Telegram APIs if you want\n";
         }
 
         if (keyValuePair.getFirst().equals("feature.starting_server_message")) {
@@ -48,12 +48,6 @@ public class ModConfigProvider implements SimpleConfig.DefaultConfig {
                 keyValuePair.getFirst().equals("feature.tg_send_message_command") ||
                 keyValuePair.getFirst().equals("proxy.port")
         ) {
-            if (keyValuePair.getFirst().equals("proxy.port")) {
-                configContents += "# The proxy.type can be \"http\" or \"socks\". Example:\n" +
-                        "#proxy.type=socks\n" +
-                        "#proxy.host=127.0.0.1\n" +
-                        "#proxy.port=1080\n";
-            }
             configContents += "\n";
         }
     }
