@@ -36,7 +36,7 @@ public class Api {
 
     public String getBaseURL()
     {
-        return "https://api.telegram.org/bot" + botToken + "/";
+        return "http://localhost:1234/bot" + botToken + "/";
     }
 
     public String get(String uri)
@@ -88,7 +88,6 @@ public class Api {
             if (proxyType.equals("http")) {
                 proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, intProxyPort));
             } else if (proxyType.equals("socks")) {
-                Telemine.LOGGER.info("debug a");
                 proxy = new Proxy(Proxy.Type.SOCKS, new InetSocketAddress(proxyHost, intProxyPort));
             }
 
@@ -97,7 +96,6 @@ public class Api {
             if (proxy == null) {
                 connection = (HttpURLConnection) url.openConnection();
             } else {
-                Telemine.LOGGER.info("debug b");
                 connection = (HttpURLConnection) url.openConnection(proxy);
             }
 
