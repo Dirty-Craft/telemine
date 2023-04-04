@@ -26,7 +26,6 @@ public class Telemine implements ModInitializer {
 			API.enabled = true;
 			API.botToken = ModConfigs.BOT_TOKEN;
 			API.groupID = ModConfigs.GROUP_ID;
-			API.proxyType = ModConfigs.PROXY_TYPE;
 			API.proxyHost = ModConfigs.PROXY_HOST;
 			API.proxyPort = ModConfigs.PROXY_PORT;
 		}

@@ -15,7 +15,6 @@ public class Api {
     public boolean enabled = false;
     public String botToken = null;
     public String groupID = null;
-    public String proxyType = null;
 
     public String proxyHost = null;
     public String proxyPort = null;
@@ -85,7 +84,7 @@ public class Api {
                 intProxyPort = Integer.parseInt(proxyPort);
             }
 
-            if (proxyType.equals("http")) {
+            if (!stringIsEmpty(proxyHost)) {
                 proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, intProxyPort));
             }
 
