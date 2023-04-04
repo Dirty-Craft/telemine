@@ -90,7 +90,7 @@ public class Api {
             } else if (proxyType.equals("socks")) {
                 System.getProperties().put("proxySet", "true");
                 System.getProperties().put("socksProxyHost", proxyHost);
-                System.getProperties().put("socksProxyPort", intProxyPort.toString());
+                System.getProperties().put("socksProxyPort", proxyPort);
             }
 
             URL url = new URL(getBaseURL() + uri);
