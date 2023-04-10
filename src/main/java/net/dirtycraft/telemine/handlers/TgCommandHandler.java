@@ -37,7 +37,7 @@ public class TgCommandHandler extends Handler {
         String output;
         String messageToBeSent = ModConfigs.LANG_TG_COMMAND_SEND_MESSAGE_FORMAT.replaceAll("\\{message\\}", message);
         try {
-            output = API.sendMessage(messageToBeSent.replaceAll("\\{player_name\\}", playerName));
+            output = API.sendMessage(messageToBeSent.replaceAll("\\{player_name\\}", playerName), ModConfigs.FEATURE_TG_SEND_MESSAGE_COMMAND_CHAT_ID);
         } catch (Exception e) {
             output = "ERROR";
         }

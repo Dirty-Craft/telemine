@@ -15,7 +15,7 @@ public class StoppingServerHandler extends Handler {
     public static void handle()
     {
         LOGGER.info("Sending shutting server down message");
-        String output = API.sendMessage(ModConfigs.LANG_SERVER_SHUTDOWN_MESSAGE);
+        String output = API.sendMessage(ModConfigs.LANG_SERVER_SHUTDOWN_MESSAGE, ModConfigs.FEATURE_SERVER_SHUTDOWN_MESSAGE_CHAT_ID);
 
         if (output.equals("ERROR")) {
             LOGGER.error("Failed to send shutting server down message");

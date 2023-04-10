@@ -14,8 +14,10 @@ These are some features:
 - Adds `/tg` command that allows players to send a message in the group from the server chat and you can send multiline messages by using `%n` where ever you want to break the line
 - Ability to set general header and footer for all of messages
 - Ability to set HTTP proxy for calling Telegram APIs
-- Sends a message to a custom chat when a command gets executed on the server and can be used by server owner to monitor what server operators do
+- Sends a message when a command gets executed on the server and can be used by server owner to monitor what server operators do
+- Sends villager death messages and the death location and killer
 - Every feature is configurable and can be enabled/disabled
+- Ability to set different features to send their messages to different chats
 - All text messages are customizable in the config
 
 ### Configuration
@@ -23,11 +25,11 @@ These are some features:
 ```properties
 # This one can enable/disable the whole mod
 # Allowed values are "true" and "false"
-enabled=false
+enabled=true
 
 # Here you have to set bot token and also group chat id
 telegram.bot_token=
-telegram.group_id=
+telegram.chat_id=
 
 # You can set a HTTP proxy for calling the Telegram APIs if you want
 proxy.host=
@@ -36,32 +38,55 @@ proxy.port=
 # The `feature.*` options can be used to enable/disable different features
 # All the features and enabled by default
 # Allowed values are "true" and "false"
-feature.starting_server_message=true
-feature.server_started_and_ready_message=true
-feature.server_shutdown_message=true
-feature.player_join_messages=true
-feature.player_join_message_show_online_players_list=true
-feature.player_leave_messages=true
-feature.player_leave_message_show_online_players_list=true
-feature.player_death_messages=true
-feature.advancement_made_messages=true
-feature.monitor_command_executions=true
-feature.monitor_command_executions_chat_id=
-feature.tg_send_message_command=true
 
 # The `lang.*` options can be used to customize different messages that bot sends in the group
 # Also you can use `\n` to break the line and write multiline content
+
+# The `feature.*_chat_id` options can be used to set different features to send their messages to different chats
+# If you want them to send the messages to the main chat (telegram.chat_id), just leave them blank
+
+feature.starting_server_message=true
+feature.starting_server_message_chat_id=
 lang.starting_server_message=Starting the server...
+
+feature.server_started_and_ready_message=true
+feature.server_started_and_ready_message_chat_id=
 lang.server_started_and_ready_message=Server is up!
+
+feature.server_shutdown_message=true
+feature.server_shutdown_message_chat_id=
 lang.server_shutdown_message=Shutting down the server...
-lang.online_players_list_message=There are {count} of a max of {max_count} players online: {list}
+
+feature.player_join_messages=true
+feature.player_join_messages_chat_id=
 lang.player_join_message={name} joined the server
+
+feature.player_join_message_show_online_players_list=true
+feature.player_leave_message_show_online_players_list=true
+lang.online_players_list_message=There are {count} of a max of {max_count} players online: {list}
+
+feature.player_leave_messages=true
+feature.player_leave_messages_chat_id=
 lang.player_left_message={name} left the server
+
+feature.player_death_messages=true
+feature.player_death_messages_chat_id=
 lang.player_death_message={player_name} {death_message}
-lang.command_report_message={player_name} entered a command: {command}
-lang.tg_command_send_message_format={player_name}: {message}
+
+feature.advancement_made_messages=true
+feature.advancement_made_messages_chat_id=
 lang.advancement_made_message={advancement_message}
+
+feature.monitor_command_executions=false
+feature.monitor_command_executions_chat_id=
+lang.command_report_message={player_name} entered a command: {command}
+
+feature.tg_send_message_command=true
+feature.tg_send_message_command_chat_id=
+lang.tg_command_send_message_format={player_name}: {message}
+
 lang.general_message_header=
+
 lang.general_message_footer=
 ```
 

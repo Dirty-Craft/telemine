@@ -25,7 +25,8 @@ public class PlayerDeathHandler extends Handler {
         String deathMessage = StringUtils.replaceOnce(damageSource.getDeathMessage(player).getString(), playerName + " ", "");
         String output = API.sendMessage(
                 ModConfigs.LANG_PLAYER_DEATH_MESSAGE.replaceAll("\\{death_message\\}", deathMessage)
-                        .replaceAll("\\{player_name\\}", playerName)
+                        .replaceAll("\\{player_name\\}", playerName),
+                ModConfigs. FEATURE_PLAYER_DEATH_MESSAGES_CHAT_ID
         );
 
         if (output.equals("ERROR")) {

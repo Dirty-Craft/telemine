@@ -21,7 +21,7 @@ public class Telemine implements ModInitializer {
 		} else if (ModConfigs.BOT_TOKEN == "") {
 			LOGGER.warn("The Telegram bot token is not set in the configs");
 		} else if (ModConfigs.CHAT_ID == "") {
-			LOGGER.warn("The Telegram group ID is not set in the configs");
+			LOGGER.warn("The Telegram chat ID is not set in the configs");
 		} else {
 			API.enabled = true;
 			API.botToken = ModConfigs.BOT_TOKEN;

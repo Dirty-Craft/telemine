@@ -109,7 +109,7 @@ public class Api {
             connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
             connection.setUseCaches(false);
             connection.setDoOutput(true);
-            connection.setConnectTimeout(10000);
+            connection.setConnectTimeout(3000);
 
             DataOutputStream wr = new DataOutputStream(
                     connection.getOutputStream());

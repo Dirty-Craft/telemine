@@ -25,7 +25,7 @@ public class PlayerLeaveHandler extends Handler {
             message += "\n\n" + getOnlinePlayersList(server, false, playerName);
         }
 
-        String output = API.sendMessage(message);
+        String output = API.sendMessage(message, ModConfigs.FEATURE_PLAYER_LEAVE_MESSAGES_CHAT_ID);
 
         if (output.equals("ERROR")) {
             LOGGER.error("Failed to send player leave message");
