@@ -17,6 +17,7 @@ These are some features:
 - Sends a message when a command gets executed on the server and can be used by server owner to monitor what server operators do
 - Sends villager death messages and the death location and killer
 - Every feature is configurable and can be enabled/disabled
+- You can use `/telemine reloadconfig` command to reload the config options from config file without restarting the server
 - Ability to set different features to send their messages to different chats
 - All text messages are customizable in the config
 
