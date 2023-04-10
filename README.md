@@ -10,14 +10,12 @@ These are some features:
 - Sends a message when shutting down the server
 - Sends player join/leave messages and list of the online players in the group
 - Sends the death messages
-- Sends the advancement messages
 - Adds `/tg` command that allows players to send a message in the group from the server chat and you can send multiline messages by using `%n` where ever you want to break the line
 - Ability to set general header and footer for all of messages
 - Ability to set HTTP proxy for calling Telegram APIs
 - Sends a message when a command gets executed on the server and can be used by server owner to monitor what server operators do
 - Sends villager death messages and the death location and killer
 - Every feature is configurable and can be enabled/disabled
-- You can use `/telemine reloadconfig` command to reload the config options from config file without restarting the server
 - Ability to set different features to send their messages to different chats
 - All text messages are customizable in the config
 
