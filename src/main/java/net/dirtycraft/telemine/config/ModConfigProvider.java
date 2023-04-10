@@ -41,7 +41,7 @@ public class ModConfigProvider implements SimpleConfig.DefaultConfig {
 
             if (keyValuePair.getFirst().equals("proxy.port")) {
                 configContents += "# The `feature.*` options can be used to enable/disable different features\n" +
-                        "# All the features and enabled by default\n" +
+                        "# Most features are enabled by default\n" +
                         "# Allowed values are \"true\" and \"false\"\n\n";
 
                 configContents += "# The `lang.*` options can be used to customize different messages that bot sends in the group\n" +

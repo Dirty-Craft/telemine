@@ -56,6 +56,7 @@ public class Telemine implements ModInitializer {
 			PlayerDeathHandler.register();
 			PlayerJoinHandler.register();
 			PlayerLeaveHandler.register();
+			VillagerDeathHandler.register();
 		}
 	}
 }

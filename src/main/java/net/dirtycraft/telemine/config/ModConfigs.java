@@ -68,6 +68,11 @@ public class ModConfigs {
     public static String LANG_TG_COMMAND_SEND_MESSAGE_FORMAT = "{player_name}: {message}";
 
 
+    public static boolean FEATURE_VILLAGER_DEATH_MESSAGE = false;
+    public static String FEATURE_VILLAGER_DEATH_MESSAGE_CHAT_ID = "";
+    public static String LANG_VILLAGER_DEATH_MESSAGE = "{death_message} at {location}";
+
+
     public static String LANG_GENERAL_MESSAGE_HEADER = "";
     public static String LANG_GENERAL_MESSAGE_FOOTER = "";
 
@@ -130,6 +135,10 @@ public class ModConfigs {
         configs.addKeyValuePair(new Pair<>("feature.tg_send_message_command_chat_id", FEATURE_TG_SEND_MESSAGE_COMMAND_CHAT_ID), "String");
         configs.addKeyValuePair(new Pair<>("lang.tg_command_send_message_format", LANG_TG_COMMAND_SEND_MESSAGE_FORMAT), "String");
 
+        configs.addKeyValuePair(new Pair<>("feature.villager_death_message", FEATURE_VILLAGER_DEATH_MESSAGE), "boolean");
+        configs.addKeyValuePair(new Pair<>("feature.villager_death_message_chat_id", FEATURE_VILLAGER_DEATH_MESSAGE_CHAT_ID), "String");
+        configs.addKeyValuePair(new Pair<>("lang.villager_death_message", LANG_VILLAGER_DEATH_MESSAGE), "String");
+
         configs.addKeyValuePair(new Pair<>("lang.general_message_header", LANG_GENERAL_MESSAGE_HEADER), "String");
         configs.addKeyValuePair(new Pair<>("lang.general_message_footer", LANG_GENERAL_MESSAGE_FOOTER), "String");
     }
@@ -182,6 +191,10 @@ public class ModConfigs {
         FEATURE_TG_SEND_MESSAGE_COMMAND = CONFIG.getOrDefault("feature.tg_send_message_command", FEATURE_TG_SEND_MESSAGE_COMMAND);
         FEATURE_TG_SEND_MESSAGE_COMMAND_CHAT_ID = CONFIG.getOrDefault("feature.tg_send_message_command_chat_id", CHAT_ID);
         LANG_TG_COMMAND_SEND_MESSAGE_FORMAT = CONFIG.getOrDefault("lang.tg_command_send_message_format", LANG_TG_COMMAND_SEND_MESSAGE_FORMAT);
+
+        FEATURE_VILLAGER_DEATH_MESSAGE = CONFIG.getOrDefault("feature.villager_death_message", FEATURE_VILLAGER_DEATH_MESSAGE);
+        FEATURE_VILLAGER_DEATH_MESSAGE_CHAT_ID = CONFIG.getOrDefault("feature.villager_death_message_chat_id", CHAT_ID);
+        LANG_VILLAGER_DEATH_MESSAGE = CONFIG.getOrDefault("lang.villager_death_message", LANG_VILLAGER_DEATH_MESSAGE);
 
         LANG_GENERAL_MESSAGE_HEADER = CONFIG.getOrDefault("lang.general_message_header", LANG_GENERAL_MESSAGE_HEADER);
         LANG_GENERAL_MESSAGE_FOOTER = CONFIG.getOrDefault("lang.general_message_footer", LANG_GENERAL_MESSAGE_FOOTER);
