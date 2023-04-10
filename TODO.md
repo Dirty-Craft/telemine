@@ -1,6 +1,5 @@
 # TODO
 
-- Send the advancement messages
-- Send villager death messages to a custom chat
+- Send villager death messages
 - Show tps in players list message
-
+- Send the advancement messages
