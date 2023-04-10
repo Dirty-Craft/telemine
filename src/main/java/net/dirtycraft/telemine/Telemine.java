@@ -20,12 +20,12 @@ public class Telemine implements ModInitializer {
 			//LOGGER.warn("The mod is disabled");
 		} else if (ModConfigs.BOT_TOKEN == "") {
 			LOGGER.warn("The Telegram bot token is not set in the configs");
-		} else if (ModConfigs.GROUP_ID == "") {
+		} else if (ModConfigs.CHAT_ID == "") {
 			LOGGER.warn("The Telegram group ID is not set in the configs");
 		} else {
 			API.enabled = true;
 			API.botToken = ModConfigs.BOT_TOKEN;
-			API.groupID = ModConfigs.GROUP_ID;
+			API.groupID = ModConfigs.CHAT_ID;
 			API.proxyHost = ModConfigs.PROXY_HOST;
 			API.proxyPort = ModConfigs.PROXY_PORT;
 		}

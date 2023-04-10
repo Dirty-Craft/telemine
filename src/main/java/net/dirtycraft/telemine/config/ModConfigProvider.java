@@ -22,7 +22,7 @@ public class ModConfigProvider implements SimpleConfig.DefaultConfig {
         }
 
         if (keyValuePair.getFirst().equals("telegram.bot_token")) {
-            configContents += "# Here you have to set bot token and also group chat id\n";
+            configContents += "# Here you have to set bot token and also the chat id\n";
         }
 
         if (keyValuePair.getFirst().equals("proxy.host")) {
@@ -33,7 +33,7 @@ public class ModConfigProvider implements SimpleConfig.DefaultConfig {
 
         if (
                 keyValuePair.getFirst().equals("enabled") ||
-                keyValuePair.getFirst().equals("telegram.group_id") ||
+                keyValuePair.getFirst().equals("telegram.chat_id") ||
                 keyValuePair.getFirst().startsWith("lang.") ||
                 keyValuePair.getFirst().equals("proxy.port")
         ) {
@@ -46,6 +46,9 @@ public class ModConfigProvider implements SimpleConfig.DefaultConfig {
 
                 configContents += "# The `lang.*` options can be used to customize different messages that bot sends in the group\n" +
                         "# Also you can use `\\n` to break the line and write multiline content\n\n";
+
+                configContents += "# The `feature.*_chat_id` options can be used to set different features to send their messages to different chats\n" +
+                        "# If you want them to send the messages to the main chat (telegram.chat_id), just leave them blank\n\n";
             }
         }
     }
