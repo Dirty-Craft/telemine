@@ -40,7 +40,7 @@ public class ModConfigs {
 
     public static boolean FEATURE_PLAYER_JOIN_MESSAGE_SHOW_ONLINE_PLAYERS_LIST = true;
     public static boolean FEATURE_PLAYER_LEAVE_MESSAGE_SHOW_ONLINE_PLAYERS_LIST = true;
-    public static String LANG_ONLINE_PLAYERS_LIST_MESSAGE = "There are {count} of a max of {max_count} players online: {list}";
+    public static String LANG_ONLINE_PLAYERS_LIST_MESSAGE = "There are {count} of a max of {max_count} players online: {list}\\nServer TPS: {tps}";
 
 
     public static boolean FEATURE_PLAYER_LEAVE_MESSAGES = true;

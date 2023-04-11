@@ -49,6 +49,7 @@ public class Telemine implements ModInitializer {
 		}
 
 		if (API.isValid()) {
+			Handler.boot();
 			TgCommandHandler.register();
 			StartingServerHandler.register();
 			ServerStartedHandler.register();
