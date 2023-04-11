@@ -19,16 +19,20 @@ public class PlayerLeaveHandler extends Handler {
         LOGGER.info("Sending player leave message");
 
         String playerName = handler.player.getName().getString();
-        String message = ModConfigs.LANG_PLAYER_LEFT_MESSAGE.replaceAll("\\{name\\}", playerName);
+        String message;
 
         if (ModConfigs.FEATURE_PLAYER_LEAVE_MESSAGE_SHOW_ONLINE_PLAYERS_LIST) {
-            message += "\n\n" + getOnlinePlayersList(server, false, playerName);
+            message = ModConfigs.LANG_PLAYER_LEFT_MESSAGE.replaceAll("\\{name\\}", playerName) + "\n\n" + getOnlinePlayersList(server, false, playerName);
+        } else {
+            message = ModConfigs.LANG_PLAYER_LEFT_MESSAGE.replaceAll("\\{name\\}", playerName);
         }
 
-        String output = API.sendMessage(message, ModConfigs.FEATURE_PLAYER_LEAVE_MESSAGES_CHAT_ID);
+        new Thread(() -> {
+            String output = API.sendMessage(message, ModConfigs.FEATURE_PLAYER_LEAVE_MESSAGES_CHAT_ID);
 
-        if (output.equals("ERROR")) {
-            LOGGER.error("Failed to send player leave message");
-        }
+            if (output.equals("ERROR")) {
+                LOGGER.error("Failed to send player leave message");
+            }
+        }).start();
     }
 }

@@ -23,14 +23,17 @@ public class PlayerDeathHandler extends Handler {
         LOGGER.info("Sending player death message");
         String playerName = player.getName().getString();
         String deathMessage = StringUtils.replaceOnce(damageSource.getDeathMessage(player).getString(), playerName + " ", "");
-        String output = API.sendMessage(
-                ModConfigs.LANG_PLAYER_DEATH_MESSAGE.replaceAll("\\{death_message\\}", deathMessage)
-                        .replaceAll("\\{player_name\\}", playerName),
-                ModConfigs. FEATURE_PLAYER_DEATH_MESSAGES_CHAT_ID
-        );
 
-        if (output.equals("ERROR")) {
-            LOGGER.error("Failed to send player death message");
-        }
+        new Thread(() -> {
+            String output = API.sendMessage(
+                    ModConfigs.LANG_PLAYER_DEATH_MESSAGE.replaceAll("\\{death_message\\}", deathMessage)
+                            .replaceAll("\\{player_name\\}", playerName),
+                    ModConfigs.FEATURE_PLAYER_DEATH_MESSAGES_CHAT_ID
+            );
+
+            if (output.equals("ERROR")) {
+                LOGGER.error("Failed to send player death message");
+            }
+        }).start();
     }
 }

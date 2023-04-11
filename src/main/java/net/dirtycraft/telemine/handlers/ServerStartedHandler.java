@@ -15,10 +15,13 @@ public class ServerStartedHandler extends Handler {
     public static void handle()
     {
         LOGGER.info("Sending server started message");
-        String output = API.sendMessage(ModConfigs.LANG_SERVER_STARTED_AND_READY_MESSAGE, ModConfigs.FEATURE_SERVER_STARTED_AND_READY_MESSAGE_CHAT_ID);
 
-        if (output.equals("ERROR")) {
-            LOGGER.error("Failed to send server started message");
-        }
+        new Thread(() -> {
+            String output = API.sendMessage(ModConfigs.LANG_SERVER_STARTED_AND_READY_MESSAGE, ModConfigs.FEATURE_SERVER_STARTED_AND_READY_MESSAGE_CHAT_ID);
+
+            if (output.equals("ERROR")) {
+                LOGGER.error("Failed to send server started message");
+            }
+        }).start();
     }
 }

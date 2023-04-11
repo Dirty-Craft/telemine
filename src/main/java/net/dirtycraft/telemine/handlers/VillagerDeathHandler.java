@@ -36,11 +36,13 @@ public class VillagerDeathHandler extends Handler {
             String finalMessage = ModConfigs.LANG_VILLAGER_DEATH_MESSAGE.replaceAll("\\{death_message\\}", deathMessage)
                     .replaceAll("\\{location\\}", position);
 
-            String output = API.sendMessage(finalMessage, ModConfigs.FEATURE_VILLAGER_DEATH_MESSAGE_CHAT_ID);
+            new Thread(() -> {
+                String output = API.sendMessage(finalMessage, ModConfigs.FEATURE_VILLAGER_DEATH_MESSAGE_CHAT_ID);
 
-            if (output.equals("ERROR")) {
-                LOGGER.error("Failed to send villager death message");
-            }
+                if (output.equals("ERROR")) {
+                    LOGGER.error("Failed to send villager death message");
+                }
+            }).start();
         }
     }
 }

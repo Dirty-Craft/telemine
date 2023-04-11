@@ -20,16 +20,20 @@ public class PlayerJoinHandler extends Handler {
         LOGGER.info("Sending player join message");
 
         String playerName = handler.player.getName().getString();
-        String message = ModConfigs.LANG_PLAYER_JOIN_MESSAGE.replaceAll("\\{name\\}", playerName);
+        String message;
 
         if (ModConfigs.FEATURE_PLAYER_JOIN_MESSAGE_SHOW_ONLINE_PLAYERS_LIST) {
-            message += "\n\n" + getOnlinePlayersList(server, true, playerName);
+            message = ModConfigs.LANG_PLAYER_JOIN_MESSAGE.replaceAll("\\{name\\}", playerName) + "\n\n" + getOnlinePlayersList(server, true, playerName);
+        } else {
+            message = ModConfigs.LANG_PLAYER_JOIN_MESSAGE.replaceAll("\\{name\\}", playerName);
         }
 
-        String output = API.sendMessage(message, ModConfigs.FEATURE_PLAYER_JOIN_MESSAGES_CHAT_ID);
+        new Thread(() -> {
+            String output = API.sendMessage(message, ModConfigs.FEATURE_PLAYER_JOIN_MESSAGES_CHAT_ID);
 
-        if (output.equals("ERROR")) {
-            LOGGER.error("Failed to send player join message");
-        }
+            if (output.equals("ERROR")) {
+                LOGGER.error("Failed to send player join message");
+            }
+        }).start();
     }
 }
