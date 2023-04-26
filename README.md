@@ -62,7 +62,7 @@ lang.player_join_message={name} joined the server
 
 feature.player_join_message_show_online_players_list=true
 feature.player_leave_message_show_online_players_list=true
-lang.online_players_list_message=There are {count} of a max of {max_count} players online: {list}\nServer TPS: {tps}
+lang.online_players_list_message=There are {count} of a max of {max_count} players online: {list}
 
 feature.player_leave_messages=true
 feature.player_leave_messages_chat_id=

@@ -12,13 +12,13 @@ import java.util.Arrays;
 public class Handler {
     public static final Logger LOGGER = Telemine.LOGGER;
     public static final Api API = Telemine.API;
-    public static int totalTicksRan = 0;
+    /*public static int totalTicksRan = 0;
     public static long initTime = 0;
-    public static int currentTPS = 20;
+    public static int currentTPS = 20;*/
 
     public static void boot()
     {
-        initTime = System.currentTimeMillis();
+        /*initTime = System.currentTimeMillis();
         ServerTickEvents.END_SERVER_TICK.register((server) -> {
             if (getUptime() > 1000) {
                 currentTPS = totalTicksRan;
@@ -27,10 +27,10 @@ public class Handler {
             }
 
             totalTicksRan++;
-        });
+        });*/
     }
 
-    public static long getUptime()
+    /*public static long getUptime()
     {
         return (System.currentTimeMillis() - initTime);
     }
@@ -42,7 +42,7 @@ public class Handler {
         }
 
         return currentTPS;
-    }
+    }*/
 
     public static String getOnlinePlayersList(MinecraftServer server, boolean include, String playerName)
     {
@@ -64,7 +64,6 @@ public class Handler {
         }
 
         return ModConfigs.LANG_ONLINE_PLAYERS_LIST_MESSAGE.replaceAll("\\{list\\}", String.join(", ", playerNames))
-                .replaceAll("\\{tps\\}", Integer.toString(getTPS()))
                 .replaceAll("\\{count\\}", Integer.toString(playerNames.length))
                 .replaceAll("\\{max_count\\}", Integer.toString(server.getMaxPlayerCount()));
     }
