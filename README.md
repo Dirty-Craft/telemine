@@ -13,6 +13,7 @@ These are some features:
 - Adds `/tg` command that allows players to send a message in the group from the server chat and you can send multiline messages by using `%n` where ever you want to break the line
 - Ability to set general header and footer for all of messages
 - Ability to set HTTP proxy for calling Telegram APIs
+- Disables the mod after too many failed API call attempts
 - Sends a message when a command gets executed on the server and can be used by server owner to monitor what server operators do
 - Sends villager death messages and the death location and killer
 - Every feature is configurable and can be enabled/disabled
